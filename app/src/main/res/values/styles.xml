@@ -17,9 +17,9 @@
         <!--&lt;!&ndash;   theme UI controls like checkboxes and text fields &ndash;&gt;-->
         <!--<item name="colorAccent">#FF4081</item>-->
 
-        <item name="colorPrimaryDark">#8BC34A</item>
+        <item name="colorPrimaryDark">#673AB7</item>
         <!--   darker variant for the status bar and contextual app bars -->
-        <item name="colorPrimary">#8BC34A</item>
+        <item name="colorPrimary">#673AB7</item>
         <!--   theme UI controls like checkboxes and text fields -->
         <item name="colorAccent">#FF9E22</item>
 
