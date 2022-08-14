@@ -1,5 +1,7 @@
 package com.afdroid.timetracker.screens;
 
+import static com.afdroid.timetracker.Utils.AppHelper.initAppHelper;
+
 import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.Intent;
@@ -24,7 +26,6 @@ import com.afdroid.timetracker.R;
 import com.afdroid.timetracker.Utils.AppHelper;
 import com.afdroid.timetracker.adapters.PagerAdapter;
 import com.afdroid.timetracker.preferences.TimeTrackerPrefHandler;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
@@ -32,8 +33,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-
-import static com.afdroid.timetracker.Utils.AppHelper.initAppHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -97,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setMainTabLayout() {
         mainTabLayout.addTab(mainTabLayout.newTab().setText(getString(R.string.app)));
-        mainTabLayout.addTab(mainTabLayout.newTab().setText(getString(R.string.network)));
-        mainTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+//        mainTabLayout.addTab(mainTabLayout.newTab().setText(getString(R.string.network)));
+//        mainTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         mainTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -172,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
 //                prefList);
 //        viewPager.setAdapter(pagerAdapter);
         Log.d("MainActivity", "onResume: ");
+        Toast.makeText(this, "on Resume", Toast.LENGTH_SHORT).show();
     }
 
     @Override

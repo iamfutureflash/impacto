@@ -97,7 +97,7 @@ public class StatsFragment extends Fragment {
 
     private void showAlert() {
         new AlertDialog.Builder(getActivity())
-                .setTitle(R.string.network_stats)
+//                .setTitle(R.string.network_stats)
                 .setMessage(R.string.networks_stats_na)
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

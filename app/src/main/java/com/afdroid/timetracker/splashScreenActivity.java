@@ -1,8 +1,8 @@
 package com.afdroid.timetracker;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.afdroid.timetracker.screens.MainActivity;
 
@@ -15,7 +15,8 @@ public class splashScreenActivity extends AppCompatActivity {
         Thread thread = new Thread(){
             public void run(){
                 try{
-                    sleep(1000);
+                    sleep(500);
+//                    Toast n = new Toast(,"hf",200);
                 }
                 catch(Exception e){
                     e.printStackTrace();
