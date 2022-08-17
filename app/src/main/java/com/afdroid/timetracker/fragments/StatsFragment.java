@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -77,6 +78,7 @@ public class StatsFragment extends Fragment {
         return rootView;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onResume() {
         super.onResume();
@@ -92,7 +94,9 @@ public class StatsFragment extends Fragment {
         if (mode == 1 && (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)) {
             showAlert();
         }
-        getStatsInfo();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            getStatsInfo();
+        }
     }
 
     private void showAlert() {
@@ -107,6 +111,7 @@ public class StatsFragment extends Fragment {
                 .show();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void getStatsInfo() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -148,9 +153,12 @@ public class StatsFragment extends Fragment {
         startTime.setText("From " + sdf.format(startresultdate));
         endTime.setText("To " + sdf.format(endresultdate));
 
-        setUsageInfo(startMillis, endMillis);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            setUsageInfo(startMillis, endMillis);
+        }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void setUsageInfo(long startMillis, long endMillis) {
         if (appList != null) {
             PackageManager packageManager = context.getPackageManager();
@@ -179,7 +187,7 @@ public class StatsFragment extends Fragment {
                     } else {
                         values.add(fetchAppStatsInfo(startMillis, endMillis, appPkg));
                     }
-
+//                    values.sort(app);
                 } else {
                     appList.remove(appPkg);
                 }
@@ -262,9 +270,9 @@ public class StatsFragment extends Fragment {
 
         // scaling can now only be done on x- and y-axis separately
         barChart.setPinchZoom(false);
-
-        barChart.setDrawGridBackground(false);
-        // barChart.setDrawYLabels(false);
+//        barChart.setColors(new int[] {Color.RED, Color.GREEN, Color.GRAY, Color.BLACK, Color.BLUE});
+        barChart.setDrawGridBackground(true);
+//         barChart.setDrawYLabels(false);
         IAxisValueFormatter xAxisFormatter = new DayAxisValueFormatter(barChart, appNameList);
 
         XAxis xAxis = barChart.getXAxis();
@@ -277,7 +285,7 @@ public class StatsFragment extends Fragment {
         YAxis leftAxis = barChart.getAxisLeft();
         leftAxis.setLabelCount(10, false);
         leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
-        leftAxis.setSpaceTop(15f);
+        leftAxis.setSpaceTop(5f);
         leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
 
         YAxis rightAxis = barChart.getAxisRight();
@@ -295,7 +303,6 @@ public class StatsFragment extends Fragment {
 
         setData(values);
     }
-
     private void setData(ArrayList<Float> values) {
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
 
@@ -304,7 +311,8 @@ public class StatsFragment extends Fragment {
             yVals1.add(new BarEntry(i, val));
         }
 
-        BarDataSet set1;
+        BarDataSet set1 = null;
+
 
         if (barChart.getData() != null &&
                 barChart.getData().getDataSetCount() > 0) {
@@ -319,7 +327,8 @@ public class StatsFragment extends Fragment {
                 set1 = new BarDataSet(yVals1, ((mode == 0) ? "App" : "Network") + " usage in " + ((mode == 0) ? "Hours" : "GB"));
             }
             set1.setDrawIcons(false);
-            set1.setColors(ColorTemplate.LIBERTY_COLORS);
+//            set1.setColors(ColorTemplate.PASTEL_COLORS);
+            set1.setColors(ColorTemplate.MATERIAL_COLORS);
             ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
             dataSets.add(set1);
             BarData data = new BarData(dataSets);

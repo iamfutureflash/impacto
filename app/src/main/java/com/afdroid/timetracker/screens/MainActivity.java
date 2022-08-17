@@ -121,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTabLayout() {
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.daily_stats)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.yesterday_stats)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.weekly_stats)));
+//        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.yesterday_stats)));
+//        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.weekly_stats)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.monthly_stats)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(settingsIntent);
                 return true;
             case R.id.action_refresh:
-                setViewPager();
+//                setViewPager();
 //                pagerAdapter.notifyDataSetChanged();
                 return true;
             case R.id.action_info:

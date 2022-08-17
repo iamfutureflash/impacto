@@ -23,15 +23,15 @@ import java.util.List;
 
 public class AppListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<AppInfo> data;
-    private Context context;
+    private final Context context;
     private OnSettingsChangedListener onSettingsChangedListener;
 
     private class AppsViewHolder extends RecyclerView.ViewHolder implements
             CompoundButton.OnCheckedChangeListener {
 
-        private TextView txtAppName;
-        private ImageView ivAppIcon;
-        private Switch appSwitch;
+        private final TextView txtAppName;
+        private final ImageView ivAppIcon;
+        private final Switch appSwitch;
 
         private AppsViewHolder(View view) {
             super (view);
