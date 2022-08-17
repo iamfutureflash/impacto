@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,7 +34,6 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -328,7 +328,14 @@ public class StatsFragment extends Fragment {
             }
             set1.setDrawIcons(false);
 //            set1.setColors(ColorTemplate.PASTEL_COLORS);
-            set1.setColors(ColorTemplate.MATERIAL_COLORS);
+            int d =2;
+            if(d<=0){
+                set1.setColors(Color.GREEN);
+            } if(d==2){
+                set1.setColors(Color.rgb(255,127,80));
+            } if(d==3){
+                set1.setColors(Color.RED);
+            }
             ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
             dataSets.add(set1);
             BarData data = new BarData(dataSets);
