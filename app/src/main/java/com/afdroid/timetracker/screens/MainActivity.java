@@ -167,9 +167,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         setAppList();
-//        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount(),
-//                prefList);
-//        viewPager.setAdapter(pagerAdapter);
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount(),
+                prefList);
+        viewPager.setAdapter(pagerAdapter);
         Log.d("MainActivity", "onResume: ");
         Toast.makeText(this, "on Resume", Toast.LENGTH_SHORT).show();
     }
@@ -205,8 +205,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(settingsIntent);
                 return true;
             case R.id.action_refresh:
-//                setViewPager();
-//                pagerAdapter.notifyDataSetChanged();
+                setViewPager();
+                pagerAdapter.notifyDataSetChanged();
                 return true;
             case R.id.action_info:
                 showTutorialView();
@@ -240,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
             showTutorialView();
             setDefaultSelection();
             TimeTrackerPrefHandler.INSTANCE.saveIsFirstTime(false, getApplicationContext());
+
         }
     }
 
