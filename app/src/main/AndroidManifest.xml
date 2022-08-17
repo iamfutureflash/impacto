@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".splashScreenActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,9 +25,7 @@
         <activity
             android:name=".screens.MainActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".screens.SettingsActivity"
             android:configChanges="orientation"

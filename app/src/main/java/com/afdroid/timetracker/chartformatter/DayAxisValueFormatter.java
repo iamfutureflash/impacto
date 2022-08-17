@@ -24,7 +24,6 @@ public class DayAxisValueFormatter implements IAxisValueFormatter {
 
     @Override
     public String getFormattedValue(float value, AxisBase axis) {
-
         //Insert code here to return value from your custom array or based on some processing
         return appList[(int)value];
 

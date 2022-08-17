@@ -1,9 +1,5 @@
 package com.afdroid.timetracker.adapters;
 
-/**
- * Created by afrin on 12/7/17.
- */
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,6 +8,10 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.afdroid.timetracker.fragments.StatsFragment;
 
 import java.util.List;
+
+/**
+ * Created by afrin on 12/7/17.
+ */
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
