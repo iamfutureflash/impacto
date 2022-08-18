@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".UserInformationActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".splashScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -23,13 +27,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginAndSignUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.MainActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".screens.SettingsActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
