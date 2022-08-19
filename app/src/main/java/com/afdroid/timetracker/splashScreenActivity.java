@@ -15,7 +15,7 @@ public class splashScreenActivity extends AppCompatActivity {
         Thread thread = new Thread(){
             public void run(){
                 try{
-                    sleep(500);
+                    sleep(2000);
 //                    Toast n = new Toast(,"hf",200);
                 }
                 catch(Exception e){

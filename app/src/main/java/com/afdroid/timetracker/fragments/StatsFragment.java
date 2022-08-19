@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afdroid.timetracker.R;
 import com.afdroid.timetracker.Utils.AppHelper;
@@ -303,13 +304,24 @@ public class StatsFragment extends Fragment {
 
         setData(values);
     }
+
     private void setData(ArrayList<Float> values) {
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
 
         for (int i = 0; i < values.size(); i++) {
             float val = values.get(i);
             yVals1.add(new BarEntry(i, val));
+//            Toast.makeText(context, "" + appNameList.get(i).toUpperCase(Locale.ROOT) + " " + yVals1.get(i), Toast.LENGTH_SHORT).show();
+
+//            if(val<60){
+//                set1.setColors(Color.GREEN);
+//            } if(val<120&&val>60){
+//                set1.setColors(Color.rgb(255,127,80));
+//            } if(val>120){
+//                set1.setColors(Color.RED);
+//            }
         }
+
 
         BarDataSet set1 = null;
 
@@ -326,16 +338,16 @@ public class StatsFragment extends Fragment {
             } else {
                 set1 = new BarDataSet(yVals1, ((mode == 0) ? "App" : "Network") + " usage in " + ((mode == 0) ? "Hours" : "GB"));
             }
-            set1.setDrawIcons(false);
+            set1.setDrawIcons(true);
 //            set1.setColors(ColorTemplate.PASTEL_COLORS);
-            int d =2;
-            if(d<=0){
-                set1.setColors(Color.GREEN);
-            } if(d==2){
-                set1.setColors(Color.rgb(255,127,80));
-            } if(d==3){
-                set1.setColors(Color.RED);
-            }
+//            int d =2;
+//            if(d<=0){
+//                set1.setColors(Color.GREEN);
+//            } if(d==2){
+//                set1.setColors(Color.rgb(255,127,80));
+//            } if(d==3){
+//                set1.setColors(Color.RED);
+//            }
             ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
             dataSets.add(set1);
             BarData data = new BarData(dataSets);
@@ -343,7 +355,23 @@ public class StatsFragment extends Fragment {
             data.setBarWidth(0.2f);
             barChart.setData(data);
             barChart.setVisibleXRangeMaximum(4.0f);
+            for (int i = 0; i < values.size(); i++) {
+//                float val = values.get(i)0;
+//                sleep(200);
+                Toast.makeText(context, " " +values.get(i), Toast.LENGTH_SHORT).show();
+                int x;
+                x =values.get(i).intValue();
+                if(x<60){
+                    set1.setColors(Color.GREEN);
+                } if(61<x&&x<120){
+                    set1.setColors(Color.rgb(255,127,80));
+                } if(120<x){
+                    set1.setColors(Color.RED);
+                }
+            }
         }
+
+
     }
 
     @Override
