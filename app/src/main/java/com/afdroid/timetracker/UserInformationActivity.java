@@ -1,5 +1,6 @@
 package com.afdroid.timetracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,5 +17,10 @@ public class UserInformationActivity extends AppCompatActivity {
     }
 
     public void moveToIntrestActivity(View view) {
+    }
+
+    public void btnNext(View view) {
+        Intent intent = new Intent(UserInformationActivity.this,Intrest.class);
+        startActivity(intent);
     }
 }

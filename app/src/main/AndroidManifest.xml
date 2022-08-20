@@ -14,9 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Intrest"
+            android:exported="false" />
+        <activity
             android:name=".UserInformationActivity"
             android:exported="false" />
-
         <activity
             android:name=".splashScreenActivity"
             android:exported="true">
@@ -40,7 +42,6 @@
             android:name=".screens.SettingsActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-
     </application>
 
 </manifest>

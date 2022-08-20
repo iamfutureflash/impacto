@@ -33,11 +33,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
             android:onClick="loginPage"
-            android:text="Login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="Login" />
         <Button
             android:onClick="signup"
             android:text="Signup"
