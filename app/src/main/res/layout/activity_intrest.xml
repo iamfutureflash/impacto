@@ -1,43 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Intrest">
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="btnback"
-        android:text="Back"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="491dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        tools:layout_editor_absoluteY="491dp" />
-
+    tools:context=".Intrest"
+    android:padding="24dp">
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/choseYourIntrest"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Choose Your Intrest"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209" />
-</android.support.constraint.ConstraintLayout>
+        android:textAlignment="center"/>
+    <LinearLayout
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:layout_below="@id/choseYourIntrest"
+        android:layout_above="@id/Backbutton"
+        android:id="@+id/intrestList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/computerScience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="computer science"/>
+        <Button
+            android:id="@+id/unity3d"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UNITY 3D"/>
+        <Button
+            android:id="@+id/music"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="music"/>
+        <Button
+            android:id="@+id/cAndCPlusPlus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="c and c++"/>
+        <Button
+            android:id="@+id/python"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Python"/>
+        <Button
+            android:id="@+id/CSharp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C#"/>
+        <Button
+            android:id="@+id/HtmlTricks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Html"/>
+        <Button
+            android:id="@+id/css"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="css"/>
+        <Button
+            android:id="@+id/javascript"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="javascript"/>
+        <Button
+            android:id="@+id/cloudComputation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cloud computation"/>
+    </LinearLayout>
+    <Button
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/Backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnback"
+        android:text="Back"/>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/Nextbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"/>
+</RelativeLayout>
