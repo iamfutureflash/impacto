@@ -7,9 +7,9 @@ import android.app.usage.NetworkStatsManager;
 import android.app.usage.UsageStats;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afdroid.timetracker.QuestionActivity;
 import com.afdroid.timetracker.R;
 import com.afdroid.timetracker.Utils.AppHelper;
 import com.afdroid.timetracker.chartformatter.DayAxisValueFormatter;
@@ -35,6 +36,7 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -65,6 +67,8 @@ public class StatsFragment extends Fragment {
     private List<String> appNameList = null;
 
     private Context context;
+
+    private  int count =1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -271,14 +275,14 @@ public class StatsFragment extends Fragment {
 
         // scaling can now only be done on x- and y-axis separately
         barChart.setPinchZoom(false);
-//        barChart.setColors(new int[] {Color.RED, Color.GREEN, Color.GRAY, Color.BLACK, Color.BLUE});
+        barChart.setDrawBarShadow(true);
+//        barChart.setColors(new int[] {Color.RED, Color.GREEN, Color.rgb(255,127,80)});
         barChart.setDrawGridBackground(true);
 //         barChart.setDrawYLabels(false);
         IAxisValueFormatter xAxisFormatter = new DayAxisValueFormatter(barChart, appNameList);
 
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(false);
         xAxis.setGranularity(1f); // only intervals of 1 day
         xAxis.setLabelCount(appNameList.size());
         xAxis.setValueFormatter(xAxisFormatter);
@@ -312,17 +316,29 @@ public class StatsFragment extends Fragment {
             float val = values.get(i);
             yVals1.add(new BarEntry(i, val));
 //            Toast.makeText(context, "" + appNameList.get(i).toUpperCase(Locale.ROOT) + " " + yVals1.get(i), Toast.LENGTH_SHORT).show();
-
-//            if(val<60){
-//                set1.setColors(Color.GREEN);
-//            } if(val<120&&val>60){
-//                set1.setColors(Color.rgb(255,127,80));
-//            } if(val>120){
-//                set1.setColors(Color.RED);
-//            }
         }
+        float a=0,c = values.get(0);
+        for (int i = 0; i < values.size()-1; i++) {
+            a = values.get(i);
+            String name = appNameList.get(i);
+            if(c>a){
+                c=c;
+                Toast.makeText(context, "for i " + i + "Usage is  "+ c + " for " + name , Toast.LENGTH_SHORT).show();
+            }else if(c<a){
+                c=a;
+                Toast.makeText(context, "for i " + i + "Usage is  "+ c + " for " + name , Toast.LENGTH_SHORT).show();
+            }
+        }
+        Toast.makeText(context, "final value of c is  "+ c, Toast.LENGTH_SHORT).show();
 
-
+        if(c > 120&&count==1){
+                Intent intent = new Intent(StatsFragment.this.getActivity(), QuestionActivity.class);
+                Toast.makeText(context, "started intent StatsFragment.this.getActivity() --> QuestionActivity.class", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+                count++;
+        }else if(c<120){
+            Toast.makeText(context, " All apps set limit is 100 minute " , Toast.LENGTH_LONG).show();
+        }
         BarDataSet set1 = null;
 
 
@@ -339,40 +355,39 @@ public class StatsFragment extends Fragment {
                 set1 = new BarDataSet(yVals1, ((mode == 0) ? "App" : "Network") + " usage in " + ((mode == 0) ? "Hours" : "GB"));
             }
             set1.setDrawIcons(true);
-//            set1.setColors(ColorTemplate.PASTEL_COLORS);
-//            int d =2;
-//            if(d<=0){
-//                set1.setColors(Color.GREEN);
-//            } if(d==2){
-//                set1.setColors(Color.rgb(255,127,80));
-//            } if(d==3){
-//                set1.setColors(Color.RED);
-//            }
+            set1.setColors(ColorTemplate.VORDIPLOM_COLORS);
             ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
             dataSets.add(set1);
             BarData data = new BarData(dataSets);
             data.setValueTextSize(10f);
-            data.setBarWidth(0.2f);
+            data.setBarWidth(.6f);
             barChart.setData(data);
             barChart.setVisibleXRangeMaximum(4.0f);
-            for (int i = 0; i < values.size(); i++) {
-//                float val = values.get(i)0;
-//                sleep(200);
-                Toast.makeText(context, " " +values.get(i), Toast.LENGTH_SHORT).show();
-                int x;
-                x =values.get(i).intValue();
-                if(x<60){
-                    set1.setColors(Color.GREEN);
-                } if(61<x&&x<120){
-                    set1.setColors(Color.rgb(255,127,80));
-                } if(120<x){
-                    set1.setColors(Color.RED);
-                }
-            }
+//            for (int i = 0; i < values.size(); i++) {
+////                float val = values.get(i)0;
+////                sleep(200);
+////                Toast.makeText(context, " " +values.get(i), Toast.LENGTH_SHORT).show();
+//                if(values.get(i)<60){
+//                    Toast.makeText(context, " for:- " +values.get(i) + " green is set" , Toast.LENGTH_SHORT).show();
+//                    set1.setColors(Color.GREEN);
+//                }else if(61<values.get(i)&&values.get(i)<120){
+//                    Toast.makeText(context, " for:- " +values.get(i) + " orange is set" , Toast.LENGTH_SHORT).show();
+//                    set1.setColors(Color.rgb(255,127,80));
+//                }else if(120<values.get(i)){
+//                    Toast.makeText(context, " for:- " +values.get(i) + " Red is set" , Toast.LENGTH_SHORT).show();
+//                    set1.setColors(Color.RED);
+//                }
+//                if(i==values.size()){
+//                    Toast.makeText(context, " value = to i break" , Toast.LENGTH_SHORT).show();
+//                    sleep(200);
+//                    break;
+//                }
+//            }
         }
 
 
     }
+
 
     @Override
     public void onAttach(Context context) {

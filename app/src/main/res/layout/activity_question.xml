@@ -9,6 +9,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TASK COMPLETED"/>
+        android:text="TASK COMPLETED"
+        android:onClick="move_to_main"/>
 
 </LinearLayout>
