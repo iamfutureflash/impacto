@@ -7,6 +7,6 @@
 <li><h4>Anshul Singh Tomar (Project Management)</h4></li>
 <li><h4>Nitin Yadav (Backend Developer)</h4></li> 
 </ol>
-<p>You can downlode the app <a href = "https://tinyurl.com/ImpactoAppV1" target="_blank">IMPACTO V1</a></p>
+<p>You can downlode the app <a href = "https://tinyurl.com/ImpactoAppV1" target="_blank">IMPACTO v.1</a></p>
 <hr>
 <!--Sample application of using <a href="https://developer.android.com/reference/android/app/usage/UsageStatsManager.html" target="_blank">UsageStatManager</a> -->
