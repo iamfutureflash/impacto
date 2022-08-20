@@ -24,40 +24,46 @@
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <EditText
-        android:inputType="textPersonName"
         android:id="@+id/firstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textbelowPhoto"
         android:hint="First Name"
-        tools:visibility="visible" />
-    <EditText
         android:inputType="textPersonName"
-        android:layout_below="@id/firstName"
+        tools:visibility="visible" />
+
+    <EditText
         android:id="@+id/lastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"/>
+        android:layout_below="@id/firstName"
+        android:hint="Last Name"
+        android:inputType="textPersonName" />
+
     <EditText
-        android:inputType="textPersonName"
-        android:layout_below="@id/lastName"
         android:id="@+id/emailId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Email"/>
+        android:layout_below="@id/lastName"
+        android:hint="Enter Email"
+        android:inputType="textPersonName" />
+
     <EditText
-        android:inputType="number"
-        android:layout_below="@id/emailId"
         android:id="@+id/yourAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Your age"/>
+        android:layout_below="@id/emailId"
+        android:hint="Your age"
+        android:inputType="number" />
+
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Next"/>
+        android:text="Next"
+        android:onClick="btnNext"/>
 
 </RelativeLayout>
