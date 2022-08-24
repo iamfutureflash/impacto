@@ -6,6 +6,7 @@
 <li><h4>Kajal (Database Management)</h4></li>
 <li><h4>Anshul Singh Tomar (Project Management)</h4></li>
 <li><h4>Nitin Yadav (Backend Developer)</h4></li>
+<li><h4>Piyush Saxena (Backend Developer)</h4></li>
 </ol>
 <p>You can downlode the app <a href = "https://tinyurl.com/ImpactoAppV1" target="_blank">IMPACTO v.1</a></p>
 <hr>
