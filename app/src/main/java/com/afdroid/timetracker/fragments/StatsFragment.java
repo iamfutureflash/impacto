@@ -362,18 +362,42 @@ public class StatsFragment extends Fragment {
             barChart.setData(data);
             barChart.setVisibleXRangeMaximum(4.0f);
 //            for (int i = 0; i < values.size(); i++) {
-////                float val = values.get(i)0;
-////                sleep(200);
-////                Toast.makeText(context, " " +values.get(i), Toast.LENGTH_SHORT).show();
-//                if(values.get(i)<60){
-//                    Toast.makeText(context, " for:- " +values.get(i) + " green is set" , Toast.LENGTH_SHORT).show();
-//                    set1.setColors(Color.GREEN);
-//                }else if(61<values.get(i)&&values.get(i)<120){
-//                    Toast.makeText(context, " for:- " +values.get(i) + " orange is set" , Toast.LENGTH_SHORT).show();
-//                    set1.setColors(Color.rgb(255,127,80));
-//                }else if(120<values.get(i)){
+//                Toast.makeText(context, " " +values.get(i), Toast.LENGTH_SHORT).show();
+//                if(values.get(i)>120){
+//                    sleep(200);
 //                    Toast.makeText(context, " for:- " +values.get(i) + " Red is set" , Toast.LENGTH_SHORT).show();
 //                    set1.setColors(Color.RED);
+//                }
+//                if(values.get(i)<60){
+//                    sleep(200);
+//                    Toast.makeText(context, " for:- " +values.get(i) + " green is set" , Toast.LENGTH_SHORT).show();
+//                    set1.setColors(Color.GREEN);
+//                }if(values.get(i)>61&&values.get(i)<120){
+//                    sleep(200);
+//                    Toast.makeText(context, " for:- " +values.get(i) + " orange is set" , Toast.LENGTH_SHORT).show();
+//                    set1.setColors(Color.rgb(255,127,80));
+//                }
+//                if(i==values.size()){
+//                    Toast.makeText(context, " value = to i break" , Toast.LENGTH_SHORT).show();
+//                    sleep(200);
+//                    break;
+//               }
+//            }
+//            for (int i = 0; i < values.size(); i++) {
+//                Toast.makeText(context, " " +values.get(i), Toast.LENGTH_SHORT).show();
+//                if(values.get(i)>30){
+//                    sleep(200);
+//                    Toast.makeText(context, " for:- " +values.get(i) + " Red is set" , Toast.LENGTH_SHORT).show();
+//                    set1.setColors(Color.RED);
+//                }
+//                if(values.get(i)<20){
+//                    sleep(200);
+//                    Toast.makeText(context, " for:- " +values.get(i) + " green is set" , Toast.LENGTH_SHORT).show();
+//                    set1.setColors(Color.RED);
+//                }if(values.get(i)>20&&values.get(i)<30){
+//                    sleep(200);
+//                    Toast.makeText(context, " for:- " +values.get(i) + " orange is set" , Toast.LENGTH_SHORT).show();
+//                    set1.setColors(Color.rgb(255,127,80));
 //                }
 //                if(i==values.size()){
 //                    Toast.makeText(context, " value = to i break" , Toast.LENGTH_SHORT).show();

@@ -20,7 +20,7 @@ public class UserInformationActivity extends AppCompatActivity {
     }
 
     public void btnNext(View view) {
-        Intent intent = new Intent(UserInformationActivity.this, Intrest.class);
+        Intent intent = new Intent(UserInformationActivity.this, QuestionActivity.class);
         startActivity(intent);
     }
 }
