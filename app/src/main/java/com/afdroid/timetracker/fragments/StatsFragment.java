@@ -7,7 +7,6 @@ import android.app.usage.NetworkStatsManager;
 import android.app.usage.UsageStats;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -22,7 +21,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afdroid.timetracker.QuestionActivity;
 import com.afdroid.timetracker.R;
 import com.afdroid.timetracker.Utils.AppHelper;
 import com.afdroid.timetracker.chartformatter.DayAxisValueFormatter;
@@ -331,14 +329,14 @@ public class StatsFragment extends Fragment {
         }
         Toast.makeText(context, "final value of c is  "+ c, Toast.LENGTH_SHORT).show();
 
-        if(c > 120&&count==1){
-                Intent intent = new Intent(StatsFragment.this.getActivity(), QuestionActivity.class);
-                Toast.makeText(context, "started intent StatsFragment.this.getActivity() --> QuestionActivity.class", Toast.LENGTH_LONG).show();
-                startActivity(intent);
-                count++;
-        }else if(c<120){
-            Toast.makeText(context, " All apps set limit is 100 minute " , Toast.LENGTH_LONG).show();
-        }
+//        if(c > 120&&count==1){
+//                Intent intent = new Intent(StatsFragment.this.getActivity(), QuestionActivity.class);
+//                Toast.makeText(context, "started intent StatsFragment.this.getActivity() --> QuestionActivity.class", Toast.LENGTH_LONG).show();
+//                startActivity(intent);
+//                count++;
+//        }else if(c<120){
+//            Toast.makeText(context, " All apps set limit is 100 minute " , Toast.LENGTH_LONG).show();
+//        }
         BarDataSet set1 = null;
 
 

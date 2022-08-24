@@ -28,7 +28,8 @@
             android:id="@+id/computerScience"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="computer science"/>
+            android:text="computer science"
+            android:visibility="visible" />
         <Button
             android:id="@+id/unity3d"
             android:layout_width="match_parent"
@@ -88,6 +89,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:id="@+id/Nextbutton"
+        android:onClick="Nextbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"/>

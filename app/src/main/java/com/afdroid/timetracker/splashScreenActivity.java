@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.afdroid.timetracker.screens.MainActivity;
-
 public class splashScreenActivity extends AppCompatActivity {
 
     @Override
@@ -22,7 +20,7 @@ public class splashScreenActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally{
-                    Intent home = new Intent(splashScreenActivity.this, MainActivity.class);
+                    Intent home = new Intent(splashScreenActivity.this, LoginAndSignUpActivity.class);
                     startActivity(home);
                 }
             }
