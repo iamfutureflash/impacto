@@ -22,7 +22,7 @@ public class splashScreenActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally{
-                    Intent home = new Intent(splashScreenActivity.this, MainActivity.class);
+                    Intent home = new Intent(splashScreenActivity.this, LoginAndSignUpActivity.class);
                     startActivity(home);
                 }
             }
