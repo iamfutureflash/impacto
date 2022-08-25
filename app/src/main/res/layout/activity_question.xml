@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".QuestionActivity"
     android:padding="44dp"
-    android:background="?attr/colorPrimary">
+    android:background="@drawable/back">
     <TextView
         android:text="Total Question"
         android:id="@+id/totalquestion"
