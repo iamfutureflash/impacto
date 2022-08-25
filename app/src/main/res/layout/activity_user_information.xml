@@ -8,25 +8,23 @@
     tools:context=".UserInformationActivity"
     android:orientation="vertical"
     android:padding="60dp"
-    android:background="@drawable/back">
-
+    android:background="?attr/colorPrimary">
     <ImageView
+        android:layout_marginTop="48dp"
         android:id="@+id/imagetouplode"
+        android:src="@drawable/uplodeimage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="48dp"
-        android:onClick="changePhoto"
-        android:src="@drawable/uplodeimage" />
-
+        android:onClick="changePhoto"/>
     <TextView
-        android:id="@+id/textbelowPhoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imagetouplode"
         android:inputType="text"
+        android:layout_below="@id/imagetouplode"
+        android:id="@+id/textbelowPhoto"
         android:text="Uplode your photo"
+        android:textSize="20sp"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/firstName"
@@ -34,7 +32,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textbelowPhoto"
         android:hint="First Name"
-        android:textColorHint="@drawable/back"
         android:inputType="textPersonName"
         tools:visibility="visible" />
 
@@ -44,7 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/firstName"
         android:hint="Last Name"
-        android:textColorHint="@drawable/back"
         android:inputType="textPersonName" />
 
     <EditText
@@ -53,7 +49,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lastName"
         android:hint="Enter Email"
-        android:textColorHint="@drawable/back"
         android:inputType="textPersonName" />
 
     <EditText
@@ -62,7 +57,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/emailId"
         android:hint="Your age"
-        android:textColorHint="@drawable/back"
         android:inputType="number" />
 
     <Button
