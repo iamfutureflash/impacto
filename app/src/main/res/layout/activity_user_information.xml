@@ -8,7 +8,7 @@
     tools:context=".UserInformationActivity"
     android:orientation="vertical"
     android:padding="60dp"
-    android:background="?attr/colorPrimary">
+    >
     <ImageView
         android:layout_marginTop="48dp"
         android:id="@+id/imagetouplode"
