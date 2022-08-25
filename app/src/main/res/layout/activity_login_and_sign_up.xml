@@ -7,7 +7,7 @@
     tools:context=".LoginAndSignUpActivity"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="?attr/colorPrimary">
+    android:background="@drawable/bg2">
     <EditText
         android:layout_marginTop="210dp"
         android:id="@+id/email"
