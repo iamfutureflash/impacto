@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:descendantFocusability="blocksDescendants"
     android:padding="10dp"
-    android:background="@android:color/white">
+    android:background="?attr/colorPrimary">
+<!--    android:background="@android:color/white"-->
+<!--    android:background="?attr/colorPrimary">-->
 
     <ImageView
         android:id="@+id/iv_app_icon"

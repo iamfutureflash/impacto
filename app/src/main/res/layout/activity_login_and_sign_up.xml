@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".LoginAndSignUpActivity"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="?attr/colorPrimary">
     <EditText
         android:layout_marginTop="210dp"
         android:id="@+id/email"
