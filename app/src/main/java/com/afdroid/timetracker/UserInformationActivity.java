@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.afdroid.timetracker.screens.MainActivity;
+
 public class UserInformationActivity extends AppCompatActivity {
 
     @Override
@@ -20,7 +22,7 @@ public class UserInformationActivity extends AppCompatActivity {
     }
 
     public void btnNext(View view) {
-        Intent intent = new Intent(UserInformationActivity.this, QuestionActivity.class);
+        Intent intent = new Intent(UserInformationActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
