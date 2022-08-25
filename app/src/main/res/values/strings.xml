@@ -6,11 +6,11 @@
     <string name="monthly_stats">Month</string>
 
 
-<!--    Login Using your username and password and if you don’t have any account Sign-Up on the Impacto.-->
-<!--    1:If you are new to the Impacto choose the games which you want to track using Impacto app.-->
-<!--    2:Then just let the Impacto run in the background and do it’s work-->
-<!--    3: Just play the games and answer the questions.-->
-<!--    4: If you answer the questions on a regular basis you can get a reward.    -->
+    <!--    Login Using your username and password and if you don’t have any account Sign-Up on the Impacto.-->
+    <!--    1:If you are new to the Impacto choose the games which you want to track using Impacto app.-->
+    <!--    2:Then just let the Impacto run in the background and do it’s work-->
+    <!--    3: Just play the games and answer the questions.-->
+    <!--    4: If you answer the questions on a regular basis you can get a reward.    -->
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -131,4 +131,7 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="Email">email</string>
+    <string name="title_activity_timeout_fullscreen">timeoutFullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
