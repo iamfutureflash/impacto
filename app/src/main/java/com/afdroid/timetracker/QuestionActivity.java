@@ -1,5 +1,6 @@
 package com.afdroid.timetracker;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -56,12 +57,23 @@ public String correctAnswers[]={
     }
 
     private void loadQuestion() {
+        if(currentQuestionIndex==lengthOfTotalQuestion){
+            finishQuiz();
+        }
         Question.setText(question[currentQuestionIndex]);
-        Question.setText(question[0]);
         ans1.setText(choices[currentQuestionIndex][0]);
         ans2.setText(choices[currentQuestionIndex][1]);
         ans3.setText(choices[currentQuestionIndex][2]);
         ans4.setText(choices[currentQuestionIndex][3]);
+    }
+
+    private void finishQuiz() {
+        String passStatus = "";
+        if(score>lengthOfTotalQuestion*.60){
+
+        }else{
+
+        }
     }
 
     public void submit(View view) {
@@ -78,11 +90,20 @@ public String correctAnswers[]={
 
     @Override
     public void onClick(View view) {
+        ans1.setBackgroundColor(Color.WHITE);
+        ans2.setBackgroundColor(Color.WHITE);
+        ans3.setBackgroundColor(Color.WHITE);
+        ans4.setBackgroundColor(Color.WHITE);
         Button Submit = (Button) view;
         if(Submit.getId()==R.id.submit){
-
+            if(selectAnswer.equals(correctAnswers[currentQuestionIndex])){
+                score++;
+            }
+            currentQuestionIndex++;
+            loadQuestion();
         }else{
-
+            selectAnswer = Submit.getText().toString();
+            Submit.setBackgroundColor(Color.GREEN);
         }
     }
 }
