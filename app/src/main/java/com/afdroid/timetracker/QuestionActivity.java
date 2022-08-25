@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class QuestionActivity extends AppCompatActivity implements View.OnClickListener{
     public int a = 3;
@@ -70,9 +71,9 @@ public String correctAnswers[]={
     private void finishQuiz() {
         String passStatus = "";
         if(score>lengthOfTotalQuestion*.60){
-
+            Toast.makeText(this, "Passed", Toast.LENGTH_SHORT).show();
         }else{
-
+            Toast.makeText(this, "test Fail", Toast.LENGTH_SHORT).show();
         }
     }
 
