@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".BlackTimeoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".Intrest"
             android:exported="false" />
         <activity
@@ -22,16 +25,15 @@
         <activity
             android:name=".splashScreenActivity"
             android:exported="true">
-                    <intent-filter>
-                        <action android:name="android.intent.action.MAIN" />
-                        <category android:name="android.intent.category.LAUNCHER" />
-                    </intent-filter>
-        </activity>
-<!--        <intent-filter>-->
-<!--            <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--            <category android:name="android.intent.category.LAUNCHER" />-->
-<!--        </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
         <activity
             android:name=".QuestionActivity"
             android:exported="false" />
