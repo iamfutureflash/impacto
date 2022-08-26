@@ -22,6 +22,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.afdroid.timetracker.BlackTimeoutActivity;
+import com.afdroid.timetracker.QuestionActivity;
 import com.afdroid.timetracker.R;
 import com.afdroid.timetracker.Utils.AppHelper;
 import com.afdroid.timetracker.adapters.PagerAdapter;
@@ -36,6 +38,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    Thread for15minutesEyesExcersiseThread;
+    Thread for60minutesQuestionRoundThread;
+    int countfor15minutesEyesExcersiseThread;
+    int countfor60minutesQuestionRoundThread;
+//    final long for15minutesEyesExcersise = 900000;
+//    final long for60minutesQuestionRound = 3600000;
+    final long for15minutesEyesExcersise = 90;
+    final long for60minutesQuestionRound = 200;
     private static final int MY_PERMISSIONS_REQUEST_PACKAGE_USAGE_STATS = 100;
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -45,24 +55,25 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout tutorialView;
     private List<String> prefList = new ArrayList<String>();
     private AdView mAdView;
-    private String[] defaultList = {"com.facebook.katana", "com.instagram.android", "com.whatsapp", "com.android.chrome", "com.twitter.android"};
+    private String[] defaultList = {"com.facebook.katana", "com.instagram.android", "com.whatsapp", "com.android.chrome"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         TimeTrackerPrefHandler.INSTANCE.setMode(0, getApplicationContext());
 
-        MobileAds.initialize(this, AppHelper.APP_ID);
+//        MobileAds.initialize(this, AppHelper.APP_ID);
 //        MobileAds.initialize(this,
 //                "ca-app-pub-3940256099942544~3347511713"); //add test
-
 //        mAdView = (AdView) findViewById(R.id.adView);
 //        AdRequest adRequest = new AdRequest.Builder().build();
 //        mAdView.loadAd(adRequest);
 
-
+        for15minutesEyesExcersiseThread = null;
+        for60minutesQuestionRoundThread = null;
+        countfor15minutesEyesExcersiseThread=0;
+        countfor60minutesQuestionRoundThread = 0;
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         tutorialView = (RelativeLayout) findViewById(R.id.tutorial_screen);
         setSupportActionBar(toolbar);
@@ -76,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTutorialScreen();
         createLayout();
-
+        RunInbackground();
     }
 
     private void setAppList() {
@@ -86,12 +97,60 @@ public class MainActivity extends AppCompatActivity {
             setViewPager();
         }
     }
+    private void RunInbackground(){
+        for15minutesEyesExcersiseThread = new Thread(new Runnable() {
+            @Override
+            public void run(){
+                while(true) {
+                    try {
+                        Thread.sleep(500);
+                        countfor15minutesEyesExcersiseThread++;
+                        Log.d("Time", "countfor15minutesEyesExcersiseThread " + countfor15minutesEyesExcersiseThread);
+                        if(countfor15minutesEyesExcersiseThread==for15minutesEyesExcersise){
+                            countfor15minutesEyesExcersiseThread=0;
+                            Intent intent = new Intent(MainActivity.this, BlackTimeoutActivity.class);
+                            Toast.makeText(getApplicationContext(), "MainActivity.this, BlackTimeoutActivity.class for eyes excercise", Toast.LENGTH_LONG).show();
+                            startActivity(intent);
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        for15minutesEyesExcersiseThread.start();
 
+        for60minutesQuestionRoundThread = new Thread(new Runnable() {
+            @Override
+            public void run(){
+                while(true) {
+                    try {
+                        Thread.sleep(1000);
+                        countfor60minutesQuestionRoundThread++;
+                        Log.d("Time", "countfor60minutesQuestionRoundThread " + countfor60minutesQuestionRoundThread);
+                        if(countfor60minutesQuestionRoundThread==for60minutesQuestionRound){
+                            countfor60minutesQuestionRoundThread=0;
+                            Intent intent = new Intent(MainActivity.this, QuestionActivity.class);
+                            Toast.makeText(getApplicationContext(), "MainActivity.this, BlackTimeoutActivity.class for eyes excercise", Toast.LENGTH_LONG).show();
+                            startActivity(intent);
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        for60minutesQuestionRoundThread.start();
+    }
+    private void forTaskOne() {
+
+    }
     private void createLayout() {
         setMainTabLayout();
         setTabLayout();
         setViewPager();
         fillStats();
+
     }
 
     private void setMainTabLayout() {

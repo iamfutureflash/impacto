@@ -331,13 +331,13 @@ public class StatsFragment extends Fragment {
         }
         Toast.makeText(context, "final value of c is  "+ c, Toast.LENGTH_SHORT).show();
 
-        if(c > 110){
-                Intent intent = new Intent(StatsFragment.this.getActivity(), BlackTimeoutActivity.class);
-                Toast.makeText(context, "started intent StatsFragment.this.getActivity() --> BlackActivity.class", Toast.LENGTH_LONG).show();
-                startActivity(intent);
-        }else if(c<120){
-            Toast.makeText(context, " All apps set limit is 100 minute " , Toast.LENGTH_LONG).show();
-        }
+//        if(c > 20){
+//                Intent intent = new Intent(StatsFragment.this.getActivity(), BlackTimeoutActivity.class);
+//                Toast.makeText(context, "started intent StatsFragment.this.getActivity() --> BlackActivity.class", Toast.LENGTH_LONG).show();
+//                startActivity(intent);
+//        }else if(c<120){
+//            Toast.makeText(context, " All apps set limit is 100 minute " , Toast.LENGTH_LONG).show();
+//        }
         BarDataSet set1 = null;
 
 

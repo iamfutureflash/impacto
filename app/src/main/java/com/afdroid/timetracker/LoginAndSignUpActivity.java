@@ -16,12 +16,15 @@ public class LoginAndSignUpActivity extends AppCompatActivity {
     }
 
     public void loginPage(View view) {
-        Intent login = new Intent(LoginAndSignUpActivity.this, MainActivity.class);
+//        Intent login = new Intent(LoginAndSignUpActivity.this, MainActivity.class);
+        Intent login = new Intent(LoginAndSignUpActivity.this, BlackTimeoutActivity.class);
         startActivity(login);
     }
 
     public void signup(View view) {
-        Intent Signup = new Intent(LoginAndSignUpActivity.this,UserInformationActivity.class);
+//        Intent Signup = new Intent(LoginAndSignUpActivity.this,UserInformationActivity.class);
+        Intent Signup = new Intent(LoginAndSignUpActivity.this,BlackTimeoutActivity.class);
+
         startActivity(Signup);
     }
 
