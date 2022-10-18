@@ -1,5 +1,7 @@
 package com.afdroid.timetracker.fragments;
 
+import static android.os.SystemClock.sleep;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.usage.NetworkStats;
@@ -323,21 +325,22 @@ public class StatsFragment extends Fragment {
             String name = appNameList.get(i);
             if(c>a){
                 c=c;
-                Toast.makeText(context, "for i " + i + "Usage is  "+ c + " for " + name , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "for i " + i + "Usage is  "+ c + " for " + name , Toast.LENGTH_SHORT).show();
             }else if(c<a){
                 c=a;
-                Toast.makeText(context, "for i " + i + "Usage is  "+ c + " for " + name , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "for i " + i + "Usage is  "+ c + " for " + name , Toast.LENGTH_SHORT).show();
             }
         }
-        Toast.makeText(context, "final value of c is  "+ c, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context, "final value of c is  "+ c, Toast.LENGTH_SHORT).show();
 
-//        if(c > 20){
-//                Intent intent = new Intent(StatsFragment.this.getActivity(), BlackTimeoutActivity.class);
+        if(c > 10){
+//            sleep(60000);
+                Intent intent = new Intent(StatsFragment.this.getActivity(), BlackTimeoutActivity.class);
 //                Toast.makeText(context, "started intent StatsFragment.this.getActivity() --> BlackActivity.class", Toast.LENGTH_LONG).show();
-//                startActivity(intent);
-//        }else if(c<120){
-//            Toast.makeText(context, " All apps set limit is 100 minute " , Toast.LENGTH_LONG).show();
-//        }
+                startActivity(intent);
+        }else if(c<120){
+            Toast.makeText(context, " All apps set limit is 100 minute " , Toast.LENGTH_LONG).show();
+        }
         BarDataSet set1 = null;
 
 

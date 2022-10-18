@@ -44,7 +44,7 @@ public class BlackTimeoutActivity extends AppCompatActivity {
 //        long duration = TimeUnit.MINUTES.toMillis(1);
 
 
-        new CountDownTimer(15000, 1000) {
+        new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long l) {
 
@@ -55,9 +55,9 @@ public class BlackTimeoutActivity extends AppCompatActivity {
                     timer.setText("00.0" + t);
                 }
                 if(t<=0){
-                    Intent intent = new Intent(BlackTimeoutActivity.this, MainActivity.class);
+                    Intent intent = new Intent(BlackTimeoutActivity.this, QuestionActivity.class);
 //                    Intent intent = new Intent(BlackTimeoutActivity.this, BlackTimeoutActivity.class);
-                    Toast.makeText(getApplicationContext(), "started intent StatsFragment.this.getActivity() --> BlackActivity.class", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext(), "started intent StatsFragment.this.getActivity() --> BlackActivity.class", Toast.LENGTH_LONG).show();
                     startActivity(intent);
                 }
             }

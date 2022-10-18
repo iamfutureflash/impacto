@@ -1,5 +1,7 @@
 package com.afdroid.timetracker;
 
+import static android.os.SystemClock.sleep;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +24,9 @@ public class UserInformationActivity extends AppCompatActivity {
     }
 
     public void btnNext(View view) {
-        Intent intent = new Intent(UserInformationActivity.this, MainActivity.class);
+        Intent intent = new Intent(UserInformationActivity.this, BlackTimeoutActivity.class);
+        sleep(2000);
+//        Intent intent = new Intent(UserInformationActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }

@@ -20,7 +20,7 @@
         android:id="@+id/passwoed"
         android:hint="Password"
         android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         tools:ignore="DuplicateIds" />
